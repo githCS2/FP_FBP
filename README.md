@@ -1,7 +1,7 @@
 # CT Reconstruction using Forward and Backward Projection with PyTorch
 
 ## Project Overview
-This project implements a CT image reconstruction system using Forward Projection (FP) and Filtered Back Projection (FBP) methods. It uses sparse matrices A and B to represent the relationship between projection data and images, and performs computations within the PyTorch framework. This system is useful for CT reconstruction, evaluating image quality (using PSNR), and generating projection data.
+This project implements a CT image reconstruction system using Forward Projection (FP) and Filtered Back Projection (FBP) methods. It uses sparse matrices A and B to represent the relationship between projection data and images, and performs computations within the PyTorch framework. 
 
 ## Features
 - **Generate AB Matrices**: Create sparse matrices A and B for forward and backward projection.
