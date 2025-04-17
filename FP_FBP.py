@@ -2,9 +2,11 @@ import numpy as np
 import torch
 import torch.nn as nn
 
+
 # import scipy
 # from scipy.sparse import coo_matrix
 # from scipy.signal import convolve2d
+
 
 class FPLayer(nn.Module):
     """
@@ -43,6 +45,7 @@ class FPLayer(nn.Module):
         x2D = x.reshape(B * C, K * N)
 
         proj2D = torch.sparse.mm(self.A, x2D.t())
+        proj2D = proj2D.transpose(1,0)
         return proj2D.reshape(B, C, self.gammaN, -1)
 
 
@@ -104,4 +107,5 @@ class FBPLayer(nn.Module):
         # 3) Backprojection
         proj2D = proj_f.reshape(B * C, K * N)
         x2D = torch.sparse.mm(self.B, proj2D.t())
+        x2D = x2D.t()
         return x2D.reshape(B, C, -1, self.imSz[1])
