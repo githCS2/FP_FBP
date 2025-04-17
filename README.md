@@ -54,4 +54,4 @@ reconstructed_image = fbp.forward(proj_data)
 This project is licensed under the MIT License.
 ```
 
-You can copy this into your `README.md` file in your GitHub repository.
+
